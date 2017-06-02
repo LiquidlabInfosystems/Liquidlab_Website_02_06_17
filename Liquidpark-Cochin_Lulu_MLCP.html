@@ -1,0 +1,210 @@
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style type="text/css">
+</style>
+<title> Gallery</title>
+<link rel="stylesheet" href="../css/Liquidlab_style.css">
+<link rel="stylesheet" href="../css/animate.css">
+<link rel="stylesheet" type="text/css" href="../css/slideshow/demo.css" />
+<link rel="stylesheet" type="text/css" href="../css/slideshow/slicebox.css" />
+<link rel="stylesheet" type="text/css" href="../css/slideshow/custom.css" />
+<link href="https://fonts.googleapis.com/css?family=David+Libre" rel="stylesheet">
+<script type="text/javascript" src="../js/modernizr.custom.46884.js"></script>
+
+<body background="../Images/Background Image.jpg">
+		<header>
+		   <img class="logo_with_caption" src="../Images/logo_with_caption.png" alt="Liquidlab Logo" align="left" height="15%" width="15%">
+		   <h1 class="MainHeader_Gallery" > Gallery</h1>
+		</header>
+		
+		<img class="LiquidPark_MainHeader_UnderLine" src="../Images/line.png" >
+		
+		<div class="more">
+				<ul id="sb-examples">
+					
+					<li class="selected"><a href="Liquidpark-Cochin_Lulu_MLCP.html">LiquidPark-Cochin Lulu MLCP</a></li>
+					<!--<li><a href="index2.html">Example 2</a></li>
+					<li><a href="index3.html">Example 3</a></li>
+					<li><a href="index4.html">Example 4</a></li>-->
+				</ul>
+			</div>
+			
+			
+			<div class="wrapper">
+
+				<ul id="sb-slider" class="sb-slider">
+					<li>
+						<a href="../Images/Lulu_MLCP_1.jpg" target="_blank"><img src="../Images/Lulu_MLCP_1.jpg" alt="image1"/></a>
+						<div class="sb-description">
+							<h3>LuLu-MLCP-1</h3>
+						</div>
+					</li>
+					<li>
+						<a href="../Images/Lulu_MLCP_2.jpg" target="_blank"><img src="../Images/Lulu_MLCP_2.jpg" alt="image2"/></a>
+						<div class="sb-description">
+							<h3>LuLu-MLCP-2</h3>
+						</div>
+					</li>
+					<li>
+						<a href="../Images/Lulu_MLCP_3.jpg" target="_blank"><img src="../Images/Lulu_MLCP_3.jpg" alt="image1"/></a>
+						<div class="sb-description">
+							<h3>LuLu-MLCP-3</h3>
+						</div>
+					</li>
+					<li>
+						<a href="../Images/Lulu_MLCP_4.jpg" target="_blank"><img src="../Images/Lulu_MLCP_4.jpg" alt="image1"/></a>
+						<div class="sb-description">
+							<h3>LuLu-MLCP-4</h3>
+						</div>
+					</li>
+					<li>
+						<a href="../Images/Lulu_MLCP_5.jpg" target="_blank"><img src="../Images/Lulu_MLCP_5.jpg" alt="image1"/></a>
+						<div class="sb-description">
+							<h3>LuLu-MLCP-5</h3>
+						</div>
+					</li>
+					<!--<li>
+						<a href="http://www.flickr.com/photos/strupler/2968126177" target="_blank"><img src="../Images/6.jpg" alt="image1"/></a>
+						<div class="sb-description">
+							<h3>Groundbreaking Artist</h3>
+						</div>
+					</li>
+					<li>
+						<a href="http://www.flickr.com/photos/strupler/2968945158" target="_blank"><img src="../Images/7.jpg" alt="image1"/></a>
+						<div class="sb-description">
+							<h3>Selfless Philantropist</h3>
+						</div>
+					</li>-->
+				</ul>
+
+				<div id="shadow" class="shadow"></div>
+
+				<div id="nav-arrows" class="nav-arrows">
+					<a href="#">Next</a>
+					<a href="#">Previous</a>
+				</div>
+
+				<div id="nav-dots" class="nav-dots">
+					<span class="nav-dot-current"></span>
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+					<!--<span></span>
+					<span></span>-->
+				</div>
+
+			</div><!-- /wrapper -->
+
+			<!--<p class="info"><strong>Example 1:</strong> Default settings</p> -->
+
+		</div>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+		<script type="text/javascript" src="../js/jquery.slicebox.js"></script>
+		<script type="text/javascript">
+			$(function() {
+
+				var Page = (function() {
+
+					var $navArrows = $( '#nav-arrows' ).hide(),
+						$navDots = $( '#nav-dots' ).hide(),
+						$nav = $navDots.children( 'span' ),
+						$shadow = $( '#shadow' ).hide(),
+						slicebox = $( '#sb-slider' ).slicebox( {
+							onReady : function() {
+
+								$navArrows.show();
+								$navDots.show();
+								$shadow.show();
+
+							},
+							onBeforeChange : function( pos ) {
+
+								$nav.removeClass( 'nav-dot-current' );
+								$nav.eq( pos ).addClass( 'nav-dot-current' );
+
+							}
+						} ),
+						
+						init = function() {
+
+							initEvents();
+							
+						},
+						initEvents = function() {
+
+							// add navigation events
+							$navArrows.children( ':first' ).on( 'click', function() {
+
+								slicebox.next();
+								return false;
+
+							} );
+
+							$navArrows.children( ':last' ).on( 'click', function() {
+								
+								slicebox.previous();
+								return false;
+
+							} );
+
+							$nav.each( function( i ) {
+							
+								$( this ).on( 'click', function( event ) {
+									
+									var $dot = $( this );
+									
+									if( !slicebox.isActive() ) {
+
+										$nav.removeClass( 'nav-dot-current' );
+										$dot.addClass( 'nav-dot-current' );
+									
+									}
+									
+									slicebox.jump( i + 1 );
+									return false;
+								
+								} );
+								
+							} );
+
+						};
+
+						return { init : init };
+
+				})();
+
+				Page.init();
+
+			});
+		</script>
+		
+		
+		
+		
+		
+
+                <img class="footerImage_Gallery" src="../Images/footer-image2.png" style="width:100%">
+			
+				
+	<div class="social" style="top:75vw">
+			  <a href="https://www.facebook.com/LiquidlabInfoSystem" class="link facebook" target="_blank"><span class="fa fa-facebook-square"></span></a>
+			  <a href="https://twitter.com/Liquidlabinfo/" class="link twitter" target="_blank"><span class="fa fa-twitter"></span></a>
+			  <a href="https://plus.google.com/" class="link google-plus" target="_blank"><span class="fa fa-google-plus-square"></span></a>
+			  <a href="https://www.linkedin.com/company/liquidlab-infosystems/" class="link linkedin" target="_blank"><span class="fa fa-linkedin-square"></span></a>
+    </div>
+	
+	
+
+
+
+
+
+</body>
+	
+
+</head>
+
+
+</html>

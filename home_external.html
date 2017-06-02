@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=0.5">
+<style type="text/css">
+
+</style>
+
+
+<title>LiquidLab InfoSystems</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../css/Liquidlab_style1.css">
+	<link rel="stylesheet" href="../css/animate.css">
+	<body background="../Images/Background Image.jpg">
+	
+	<div class="TotalContent">
+	
+		<ul class="topnav">
+			<li><a href="Index.html">Home</a></li>
+	
+			<li class="Dropdown"><a href="Products.html"class="Dropbtn">Products</a>
+				<div class="ProductsDropdown">
+					<a href="4DigitDisplayWithArrow.html"> 4 Digit Display</a>
+					<a href="UltrasoundDetector.html"> Ultra sound Detector</a>
+				</div>
+			</li>
+			
+			<li><a href="#">Products</a></li>
+			
+			<li class="Dropdown"><a href="Solutions.html"class="Dropbtn">Solutions</a>
+				<div class="solutionsDropdown">
+					<a href="LiquidPark.html"> LiquidPark</a>
+				</div>
+			</li>
+			
+			<li><a href="#">Solutions</a></li>
+			
+			<li><a href="References.html">References</a></li>
+			<li><a href="Testimonials.html">Testimonials</a></li>
+			<li><a href="Downloads.html">Downloads</a></li>
+			<li><a href="ContactUs.html">Contact Us</a></li>
+		</ul>
+	
+		
+		
+		
+		<header>
+		<img class="logo_with_caption" src="../Images/logo_with_caption.png" alt="Liquidlab Logo" align="left" height="80.72" width="153.84"
+		</header>
+		<h1 class="MainHeader "> WELCOME TO <br> LIQUIDLAB INFOSYSTEMS </h1>
+		
+		<img Class="HomePageBanner" src="../Images/Homepage banner4.jpg" >
+		
+		<img Class="redcircle" src="../Images/redcircle_with text.png" style="width:50%" >
+		<img Class="redcircle" src="../Images/white box_with red margin.png" style="width:50%;top:1325px;" >
+		
+		<h2 class="Heading2"> Our Expertise </h2>
+		<h2 class="mytext Animate position1 animated bounce zoomIn"> PCB Design </h2>
+		<h2 class="mytext Animate position2 animated bounce zoomIn"> Software Development </h2>
+		<h2 class="mytext Animate position3 animated bounce zoomIn"> Hardware Development </h2>
+		</header>
+		
+		<div class="Home-Image-content Home-Image-section" style="max-width:1200px;max-height:80px">
+		<img class="mySlides Home-Image-animate-left" src="../Images/Hardware.jpg" style="width:100%">
+		<img class="mySlides Home-Image-animate-right" src="../Images/software-development1.jpg" style="width:100%">
+		<img class="mySlides Home-Image-animate-left" src="../Images/Hardware1.jpg" style="width:100%">
+
+</div>
+
+
+		<img class="footerImage" src="../Images/footer-image.png" style="width:100%">
+		<img class="footerContact" src="../Images/footer-contact.png" style="width:15%">
+
+		
+
+
+
+
+
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+	var y = document.getElementsByClassName("mytext");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";
+    }
+	for (i = 0; i < y.length; i++) {
+       y[i].style.display = "none";
+    }
+	
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}
+    x[myIndex-1].style.display = "block";
+	y[myIndex-1].style.display = "block";
+    setTimeout(carousel, 3000);
+}
+</script>
+
+
+
+</script>
+</div>
+	</body>
+	
+
+</head>
+
+
+</html>
